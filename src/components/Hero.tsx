@@ -79,7 +79,7 @@ export default function Hero() {
   return (
     <main className="relative h-screen w-screen overflow-hidden">
       {currentState === "grid" && (
-        <div className="grid h-screen w-screen grid-cols-3 grid-rows-2 gap-12 p-20">
+        <div className="grid h-screen w-screen grid-cols-2 grid-rows-3 gap-4 p-4 md:grid-cols-3 md:grid-rows-2 md:gap-12 md:p-20">
           {images.map((src, index) => (
             <motion.div
               key={index}
@@ -95,7 +95,7 @@ export default function Hero() {
                 alt={`Image ${index}`}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 33vw, 33vw"
+                sizes="(max-width: 768px) 50vw, 33vw"
                 priority
               />
             </motion.div>
@@ -140,13 +140,13 @@ export default function Hero() {
               transition={{ duration: 0.8 }}
             >
               <motion.h2
-                className="welcome-text mb-4 text-[262px] font-normal leading-none"
+                className="welcome-text mb-2 text-6xl font-normal leading-none md:mb-4 md:text-8xl"
                 style={{ fontFamily: "'bits indian calligra', serif" }}
               >
                 WELCOME TO
               </motion.h2>
               <motion.h1
-                className="regalia-text text-[262px] font-normal leading-none"
+                className="regalia-text text-8xl font-normal leading-none md:text-9xl"
                 style={{ fontFamily: "'Antolia Buchery', serif" }}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: animationComplete ? 1 : 0, y: animationComplete ? 0 : 50 }}
