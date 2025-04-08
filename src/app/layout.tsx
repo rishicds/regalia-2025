@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { constructMetaData } from '@/utils/functions';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = constructMetaData({
   title: 'Techtrix 2025',
@@ -10,11 +13,11 @@ export const metadata: Metadata = constructMetaData({
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={`$antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
-  );
+  )
 }
