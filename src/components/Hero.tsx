@@ -9,6 +9,7 @@ export default function Hero() {
   const [highlightedPair, setHighlightedPair] = useState<number[]>([]);
   const [animationComplete, setAnimationComplete] = useState(false);
   const [showWelcomeText, setShowWelcomeText] = useState(false);
+  const [randomImageIndex, setRandomImageIndex] = useState(0);
 
   // Define the sequence of image pairs to highlight
   const highlightSequence = [
@@ -20,7 +21,20 @@ export default function Hero() {
     [1, 4],
   ];
 
+  // Image sources
+  const images = [
+    '/hero/0.jpeg',
+    '/hero/1.jpeg',
+    '/hero/2.jpeg',
+    '/hero/3.jpeg',
+    '/hero/4.jpeg',
+    '/hero/5.jpeg',
+  ];
+
   useEffect(() => {
+    // Choose a random image index for the final state
+    setRandomImageIndex(Math.floor(Math.random() * images.length));
+
     let currentPairIndex = 0;
     let timeout: NodeJS.Timeout;
 
@@ -39,7 +53,7 @@ export default function Hero() {
             setTimeout(() => {
               currentPairIndex++;
 
-              // Show welcome text after the first 3 animations
+              // Show welcome text after the first 2 animations
               if (currentPairIndex === 2) {
                 setShowWelcomeText(true);
               }
@@ -65,16 +79,6 @@ export default function Hero() {
 
     return () => clearTimeout(timeout);
   }, []);
-
-  // Image sources
-  const images = [
-    '/hero/0.jpeg',
-    '/hero/1.jpeg',
-    '/hero/2.jpeg',
-    '/hero/3.jpeg',
-    '/hero/4.jpeg',
-    '/hero/5.jpeg',
-  ];
 
   return (
     <main className="relative h-screen w-screen overflow-hidden">
@@ -159,7 +163,7 @@ export default function Hero() {
               }}
             >
               <Image
-                src="/hero/0.jpeg"
+                src={images[randomImageIndex]}
                 alt="Featured Image"
                 fill
                 className="object-cover"
@@ -171,7 +175,7 @@ export default function Hero() {
             <motion.div className="relative z-10 flex flex-col items-center justify-center text-center text-[#FFF9E5]">
               {/* Welcome text is already shown by the component above */}
               <motion.h1
-                className="regalia-text font-semibold leading-none text-[3.5rem] xs:text-[4.5rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] xl:text-9xl"
+                className="regalia-text font-medium leading-none text-[3.5rem] xs:text-[4.5rem] sm:text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] xl:text-9xl"
                 style={{ fontFamily: "'Antolia Buchery', serif" }}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{
