@@ -2,7 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'bits indian calligra';
+  src: url('/fonts/bitsindiancalligra-Regular.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Antolia Buchery';
+  src: url('/fonts/AntoliaBuchery.ttf') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground: #ffffff;
+  --background: #220000;
+}
+
 body {
-  background-color: black;
-  color: white;
+  color: var(--foreground);
+  background: var(--background);
+  overflow: hidden;
+}
+
+.welcome-text,
+.regalia-text {
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 1536px) {
+  .welcome-text,
+  .regalia-text {
+    font-size: 180px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .welcome-text,
+  .regalia-text {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .welcome-text,
+  .regalia-text {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-text,
+  .regalia-text {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 640px) {
+  .welcome-text,
+  .regalia-text {
+    font-size: 50px;
+  }
 }
