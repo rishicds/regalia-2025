@@ -56,6 +56,10 @@ const config: Config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      fontFamily: {
+        calligra: ['"bits indian calligra"', 'serif'],
+        antolia: ['"Antolia Buchery"', 'serif'],
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
