@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix duplicate font declarations */
 @font-face {
   font-family: 'bits indian calligra';
   src: url('/fonts/bitsindiancalligra-Regular.ttf') format('woff2');
@@ -18,27 +19,10 @@
   font-display: swap;
 }
 
-:root {
-  --foreground: #ffffff;
-  --background: #220000;
-}
-                
-body {
-  background-color: black;
-  color: white;
-
 @font-face {
-  font-family: 'bits indian calligra';
-  src: url('/fonts/bitsindiancalligra-Regular.ttf') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Antolia Buchery';
-  src: url('/fonts/AntoliaBuchery.ttf') format('woff2');
-  font-weight: 400;
+  font-family: 'Cogley';
+  src: url('https://fonts.cdnfonts.com/css/cogley') format('woff');
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
@@ -94,27 +78,15 @@ body {
   }
 }
 
-@font-face {
-  font-family: 'Cogley';
-  src: url('https://fonts.cdnfonts.com/css/cogley') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Antolia Buchery';
-  src: url('/public/fonts/antolia-buchery.regular.ttf') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Add these utility classes to use with Tailwind */
-.font-cogley {
-  font-family: 'Cogley', serif;
+/* Add utility classes for custom fonts */
+.font-bits-indian {
+  font-family: 'bits indian calligra', serif;
 }
 
 .font-antolia {
   font-family: 'Antolia Buchery', serif;
+}
+
+.font-cogley {
+  font-family: 'Cogley', serif;
 }
