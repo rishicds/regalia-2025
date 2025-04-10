@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cogley: ['Cogley', 'serif'],
+        antolia: ['Antolia Buchery', 'serif'],
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',

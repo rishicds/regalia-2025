@@ -1,8 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+                
 body {
   background-color: black;
   color: white;
+}
+
+@font-face {
+  font-family: 'Cogley';
+  src: url('https://fonts.cdnfonts.com/css/cogley') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Antolia Buchery';
+  src: url('/public/fonts/antolia-buchery.regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add these utility classes to use with Tailwind */
+.font-cogley {
+  font-family: 'Cogley', serif;
+}
+
+.font-antolia {
+  font-family: 'Antolia Buchery', serif;
 }
