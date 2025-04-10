@@ -1,5 +1,14 @@
 import Hero from '@/components/Hero';
+import Sponsors from '@/components/Sponsors/Sponsors';
+import React from 'react'
 
-export default function Home() {
-  return <Hero />;
+const page = () => {
+  return (
+    <>
+   <Hero/>
+   <Sponsors/>
+   </>
+  )
 }
+
+export default page;
