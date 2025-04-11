@@ -7,7 +7,6 @@ const SessionProvider = () => {
   const setUser = useUser((state) => state.setUserData);
   useEffect(() => {
     setUser();
-    
   }, [setUser]);
 
   return null;

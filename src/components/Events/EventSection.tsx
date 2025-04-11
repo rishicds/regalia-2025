@@ -130,7 +130,7 @@ const EventSection = () => {
         minHeight: sectionHeight,
         paddingTop: windowSize.width < 640 ? "60px" : "100px", // Adjust padding-top dynamically
       }}
-      className="relative w-full px-4 sm:px-8 py-12 sm:py-20 text-white lg:pb-52"
+      className="relative overflow-x-hidden w-full px-4 sm:px-8 py-12 sm:py-20 text-white lg:pb-52"
     >
       <h1 className="text-3xl text-[#FFF9E5] font-antolia sm:text-5xl mb-4 sm:mb-10 text-left font-bold">
         Events

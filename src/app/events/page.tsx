@@ -1,4 +1,4 @@
-import EventSection from "@/components/EventSection"
+import EventSection from "@/components/Events/EventSection"
 
 const Events = () => {
   return (

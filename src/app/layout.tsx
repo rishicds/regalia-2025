@@ -3,6 +3,7 @@ import './globals.css';
 import { constructMetaData } from '@/utils/functions';
 import { Inter } from 'next/font/google';
 import SessionProvider from '@/components/SessionProvider';
+import Example from '@/components/common/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Example/>
       <body className={`${inter.className} antialiased`}>{children}
       <SessionProvider />
       </body>
