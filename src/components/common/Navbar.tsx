@@ -104,7 +104,7 @@ const Links = () => (
 
 const GlassLink = ({ text }: { text: string }) => (
   <a
-    href="#"
+    href={text === "Gallery" ? "/gallery" : `/${text.toLowerCase()}`} // Link "Gallery" to /gallery
     className="font-antolia group relative scale-100 overflow-hidden rounded-lg px-3 py-1 sm:px-4 sm:py-2 md:px-3 md:py-1 text-lg md:text-base lg:text-lg font-bold transition-transform hover:scale-105 active:scale-95"
   >
     <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">

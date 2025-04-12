@@ -4,7 +4,7 @@ import { constructMetaData } from '@/utils/functions';
 import { Inter } from 'next/font/google';
 import SessionProvider from '@/components/SessionProvider';
 import Navbar from '@/components/common/Navbar';
-
+import Footer from '@/components/common/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = constructMetaData({
@@ -21,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <Navbar/>
       <body className={`${inter.className} antialiased`}>{children}
+        <Footer />
       <SessionProvider />
       </body>
     </html>
