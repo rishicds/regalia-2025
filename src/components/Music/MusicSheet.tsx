@@ -25,10 +25,10 @@ const NOTE_SYMBOLS = {
 
 // CSS to prevent selection and focus effects
 const noSelectStyle = {
-  WebkitUserSelect: 'none',
-  MozUserSelect: 'none',
-  msUserSelect: 'none',
-  userSelect: 'none',
+  WebkitUserSelect: 'none' as const,
+  MozUserSelect: 'none' as const,
+  msUserSelect: 'none' as const,
+  userSelect: 'none' as const,
   outline: 'none',
 };
 

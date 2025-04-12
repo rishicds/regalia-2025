@@ -7,7 +7,6 @@ import Music from '@/components/Music/Music';
 const page = () => {
   return (
     <main className="relative">
-      <Hero/>
       <Music/>
       <Sponsors/>
     </main>
