@@ -17,7 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { supabase } from "@/utils/functions/supabase-client";
 import { Skeleton } from "../ui/skeleton";
 
-const Example = () => {
+const Navbar = () => {
   return (
     <section>
       <GlassNavigation />
@@ -233,4 +233,4 @@ const TextLink = ({ text }: { text: string }) => (
   </a>
 );
 
-export default Example;
+export default Navbar;
