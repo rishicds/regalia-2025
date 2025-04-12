@@ -35,7 +35,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  /* Removed static overflow: hidden - this will now be controlled by the Hero component */
+  /* overflow: hidden; */
 }
 
 /* Smooth scrolling for the whole page */

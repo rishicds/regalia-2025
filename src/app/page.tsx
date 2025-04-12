@@ -1,16 +1,16 @@
-import Hero from '@/components/Hero/Hero';
+import EventSection from '@/components/Events/EventSection';
 import Sponsors from '@/components/Sponsors/Sponsors';
-import MusicSheet from '@/components/Music/MusicSheet';
-import React from 'react'
 import Music from '@/components/Music/Music';
+import Hero from '@/components/Hero/Hero';
 
-const page = () => {
+
+export default function Home() {
   return (
-    <main className="relative">
-      <Music/>
-      <Sponsors/>
-    </main>
+  <>
+   <Hero/>
+   <Music/>
+   <EventSection/>
+   <Sponsors/>
+  </>
   )
 }
-
-export default page;
