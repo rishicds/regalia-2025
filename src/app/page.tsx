@@ -1,13 +1,16 @@
-import Hero from '@/components/Hero';
+import Hero from '@/components/Hero/Hero';
 import Sponsors from '@/components/Sponsors/Sponsors';
+import MusicSheet from '@/components/Music/MusicSheet';
 import React from 'react'
+import Music from '@/components/Music/Music';
 
 const page = () => {
   return (
-    <>
-   <Hero/>
-   <Sponsors/>
-   </>
+    <main className="relative">
+      <Hero/>
+      <Music/>
+      <Sponsors/>
+    </main>
   )
 }
 
