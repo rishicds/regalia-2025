@@ -16,13 +16,15 @@ import { logout } from "@/utils/functions/auth/logout";
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { supabase } from "@/utils/functions/supabase-client";
 import { Skeleton } from "../ui/skeleton";
+import { navRoutes } from "@/utils/constraints/constants";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <section>
+    <div>
       <GlassNavigation />
       <span className="absolute -top-[600px] left-[50%] h-[800px] w-4/5 max-w-3xl -translate-x-[50%] rounded" />
-    </section>
+    </div>
   );
 };
 
@@ -43,7 +45,9 @@ const GlassNavigation = () => {
       const top = offsetY + "px";
       const left = offsetX + "px";
 
-      animate(scope.current, { top, left }, { duration: 0 });
+      if (scope.current) {
+        animate(scope.current, { top, left }, { duration: 0 }); 
+      }
     } else {
       setHovered(false);
     }
@@ -96,22 +100,22 @@ const Logo = () => (
 
 const Links = () => (
   <div className="hidden items-center gap-4 md:gap-6 lg:gap-8 md:flex">
-    {["Home", "Events", "Team", "Gallery"].map((text) => (
-      <GlassLink key={text} text={text} />
+    {navRoutes.map((nav,index) => (
+      <GlassLink key={index} text={nav.title} route={nav.route} />
     ))}
   </div>
 );
 
-const GlassLink = ({ text }: { text: string }) => (
-  <a
-    href={text === "Gallery" ? "/gallery" : `/${text.toLowerCase()}`} // Link "Gallery" to /gallery
+const GlassLink = ({ text, route }: { text: string, route:string }) => (
+  <Link
+    href={route} 
     className="font-antolia group relative scale-100 overflow-hidden rounded-lg px-3 py-1 sm:px-4 sm:py-2 md:px-3 md:py-1 text-lg md:text-base lg:text-lg font-bold transition-transform hover:scale-105 active:scale-95"
   >
     <span className="relative z-10 text-white/90 transition-colors group-hover:text-white">
       {text}
     </span>
     <span className="absolute inset-0 z-0 bg-gradient-to-br from-white/20 to-white/5 opacity-0 transition-opacity group-hover:opacity-100" />
-  </a>
+  </Link>
 );
 
 const Buttons = ({
