@@ -67,6 +67,8 @@ export default function Hero() {
                 // Set animation complete at the end
                 setTimeout(() => {
                   setAnimationComplete(true);
+                  // Enable scrolling once animation is complete
+                  document.body.style.overflow = 'auto';
                 }, 1500);
               }
             }, 375);
@@ -75,13 +77,20 @@ export default function Hero() {
       }, 375);
     };
 
+    // Ensure the body starts with overflow hidden during animation
+    document.body.style.overflow = 'hidden';
+    
     startSequence();
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      // Reset overflow when component unmounts
+      document.body.style.overflow = 'auto';
+    };
   }, []);
 
   return (
-    <main className="relative h-screen w-screen overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* Grid state */}
       {currentState === 'grid' && (
         <div className="grid h-screen w-screen grid-cols-2 grid-rows-3 gap-4 p-4 md:grid-cols-3 md:grid-rows-2 md:gap-12 md:p-20">
@@ -190,6 +199,6 @@ export default function Hero() {
           </motion.div>
         )}
       </AnimatePresence>
-    </main>
+    </section>
   );
 }

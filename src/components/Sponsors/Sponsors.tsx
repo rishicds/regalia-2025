@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function Sponsors() {
   return (
-    <div className={`relative min-h-screen flex items-center justify-center bg-[#210000] text-white p-8 `}>
+    <section id="sponsors" className={`relative min-h-screen flex items-center justify-center bg-[#210000] text-white p-8`}>
       {/* Left content */}
       <div className="flex flex-col z-10 lg:pr-24">
         <h1 className="text-4xl md:text-5xl mb-12 font-bold font-cogley">
@@ -49,6 +49,6 @@ export default function Sponsors() {
           height={200}
         />
       </div>
-    </div>
+    </section>
   )
 }
